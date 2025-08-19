@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  margin: 0 auto;
+  min-height: 80vh;
+  width: 80%;
+  max-width: 1000px;
+  font-family: "Inter", sans-serif;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  position: relative;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3),
+    /* sombra azul suave */ 0 8px 24px rgba(0, 0, 0, 0.12); /* sombra negra suave */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  margin-top: 50px;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 3px;
+  background: linear-gradient(
+    135deg,
+    #93c5fd,
+    #60a5fa
+  ); /* degradado azul suave */
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container > * {
+  position: relative;
+  z-index: 1;
+}
+
+.container:hover {
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.45), 0 12px 36px rgba(0, 0, 0, 0.18);
+  transform: translateY(-6px);
+}
+
+.junito {
+  width: 250px;
+  height: 250px;
+  border-radius: 16px;
+  object-fit: cover;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.4s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.junito:hover {
+  transform: scale(1.07) rotate(2deg);
+}
+
+.texto {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 50%;
+  gap: 1rem;
+  color: #1e293b; /* gris oscuro */
+  line-height: 1.5;
+  z-index: 1;
+}
+
+.titulo {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0f172a; /* casi negro */
+  margin-bottom: 0.5rem;
+  z-index: 1;
+}
+
+/* Responsive para móviles: columna */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 90%;
+    min-height: auto;
+    padding: 1.5rem;
+  }
+
+  .junito {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  .texto {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .titulo {
+    font-size: 20px;
+  }
+}
