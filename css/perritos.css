@@ -1,0 +1,58 @@
+/* contenedor principal */
+.container {
+  width: 700px;
+  margin: 50px auto;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background: white;
+}
+
+.header {
+  background-color: rgb(80, 80, 205);
+  padding: 20px;
+  text-align: center;
+}
+
+.titulo {
+  color: white;
+  margin: 0;
+  font-size: 24px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 30px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.imagen {
+  width: 200px;
+  height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 3px solid #ddd;
+}
+
+.card button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #4caf50;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.card button:hover {
+  background-color: #45a049;
+}
