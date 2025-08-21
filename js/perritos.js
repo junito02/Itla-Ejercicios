@@ -1,6 +1,6 @@
 function fetching() {
   fetch("https://dog.ceo/api/breeds/image/random")
-    .then((res) => res.json())
+    .then((response) => response.json())
     .then((data) => {
       document
         .getElementById("fetch-perrito")
@@ -17,5 +17,5 @@ function xmlf() {
       document.getElementById("xml-perrito").setAttribute("src", data.message);
     }
   };
-  xml.send()
+  xml.send();
 }

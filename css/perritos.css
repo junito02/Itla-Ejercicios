@@ -56,3 +56,6 @@
 .card button:hover {
   background-color: #45a049;
 }
+.card button:active {
+  background-color: #316333;
+}
