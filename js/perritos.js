@@ -1,6 +1,6 @@
 function fetching() {
   fetch("https://dog.ceo/api/breeds/image/random")
-    .then((response) => response.json())
+    .then((res) => res.json())
     .then((data) => {
       document
         .getElementById("fetch-perrito")
@@ -12,7 +12,7 @@ function xmlf() {
   let xml = new XMLHttpRequest();
   xml.open("GET", "https://dog.ceo/api/breeds/image/random", true);
   xml.onreadystatechange = function () {
-    if (xml.readyState == 4 && xml.status == 200) {
+    if (xml.readyState == 4 && xml.status === 200) {
       let data = JSON.parse(xml.responseText);
       document.getElementById("xml-perrito").setAttribute("src", data.message);
     }
